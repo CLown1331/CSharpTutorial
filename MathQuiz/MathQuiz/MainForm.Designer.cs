@@ -130,6 +130,12 @@ namespace MathQuiz
 			this.label5.TabIndex = 8;
 			this.label5.Text = "Score:";
 			// 
+			// timer1
+			// 
+			this.timer1.Enabled = true;
+			this.timer1.Interval = 1000;
+			this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +152,7 @@ namespace MathQuiz
 			this.Controls.Add(this.button1);
 			this.Name = "MainForm";
 			this.Text = "MathQuiz";
+			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

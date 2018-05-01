@@ -18,6 +18,12 @@ namespace MathQuiz
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		int ans1 = 0;
+		int ans2 = 0;
+		int ans3 = 0;
+		int timeLeft = 0;
+		int score = 0;
+		
 		public MainForm()
 		{
 			//
@@ -31,7 +37,22 @@ namespace MathQuiz
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-	
+			Reset();
+		}
+		void Timer1Tick(object sender, EventArgs e)
+		{
+			Reset();
+		}
+		void MainFormLoad(object sender, EventArgs e)
+		{
+			Reset();
+		}
+		void Reset() 
+		{
+			timeLeft = 5;
+			label4.Text = "Time Left: " + timeLeft + " second(s)";
+			label5.Text = "Score: " + score;
+			
 		}
 	}
 }
