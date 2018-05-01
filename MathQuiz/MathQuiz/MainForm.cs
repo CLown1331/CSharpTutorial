@@ -37,11 +37,18 @@ namespace MathQuiz
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
+			Check();
 			Reset();
 		}
 		void Timer1Tick(object sender, EventArgs e)
 		{
-			Reset();
+			if( timeLeft == 0 ) {
+				Check();
+				Reset();
+			}
+			else {
+				timeLeft--;
+			}
 		}
 		void MainFormLoad(object sender, EventArgs e)
 		{
@@ -52,6 +59,10 @@ namespace MathQuiz
 			timeLeft = 5;
 			label4.Text = "Time Left: " + timeLeft + " second(s)";
 			label5.Text = "Score: " + score;
+			
+		}
+		void Check()
+		{
 			
 		}
 	}
